@@ -26,5 +26,5 @@ steps:
         git checkout origin/main
         cd ..
         ls -Rltr
-        #pip install gitpython pyyaml requests
-        #python .cloudbuild/utilities/src/main.py -p build 
+        pip install gitpython pyyaml requests
+        python ./main.py -p build 
