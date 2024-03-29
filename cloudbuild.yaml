@@ -1,0 +1,30 @@
+steps:
+  - name: gcr.io/cloud-builders/git
+    id: "Perform Image Build Process"
+    dir: ../
+    env: 
+      - PROJECT_ID=${PROJECT_ID}
+    entrypoint: sh
+    args:
+      - -c 
+      - |
+        echo "calling python code for build phase execution"
+        echo "pwd is $(pwd)"
+        echo "files"
+        #ls -Rltr
+        mkdir git_repo
+        cd git_repo
+        pwd
+        #git clone https://github.service.anz/das/gcp-daw-custom-container-images.git
+        #echo "branch list"
+        #git branch
+        git clone https://github.com/obireddy215/testrepo.git
+        git fetch --all
+        echo "branch list"
+        git branch
+        echo "after clone files"
+        git checkout origin/main
+        cd ..
+        ls -Rltr
+        #pip install gitpython pyyaml requests
+        #python .cloudbuild/utilities/src/main.py -p build 
